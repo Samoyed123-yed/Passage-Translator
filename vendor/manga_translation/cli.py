@@ -1,0 +1,104 @@
+"""Command-line entry point translating a page or a directory of pages."""
+
+from dataclasses import replace
+from pathlib import Path
+from typing import Annotated
+
+import typer
+
+from .application import run
+from .config.loading import build_config, load_config_data
+from .config.options import AppConfig, Language
+from .downloads import DownloadError, download, required_downloads
+from .inputs import InputError
+from .logs.setup import configure_logging
+
+DEFAULT_CONFIG_PATH = Path("config.yaml")
+
+app = typer.Typer()
+
+
+@app.command()
+def translate(
+    input_path: Annotated[Path, typer.Argument(exists=True, help="Image file or directory of images.")],
+    config: Annotated[
+        Path | None,
+        typer.Option(exists=True, dir_okay=False, help="YAML settings file; defaults to ./config.yaml if it exists."),
+    ] = None,
+    max_size: Annotated[int | None, typer.Option(min=0, help="Longest image side in pixels; 0 disables resizing.")] = None,
+    source_language: Annotated[Language | None, typer.Option(help="Language of the text on the pages.")] = None,
+    language: Annotated[Language | None, typer.Option(help="Target language of the translation.")] = None,
+    output: Annotated[Path | None, typer.Option(help="Directory for the translated pages.")] = None,
+) -> None:
+    configure_logging()
+    app_config = _load_config(input_path, config)
+    app_config = _apply_options(app_config, max_size, source_language, language, output)
+    try:
+        contexts = run(app_config)
+    except InputError as error:
+        raise typer.BadParameter(str(error)) from error
+    for context in contexts:
+        typer.echo(f"{context.source_path}: done")
+
+
+@app.command()
+def download_models(
+    config: Annotated[
+        Path | None,
+        typer.Option(exists=True, dir_okay=False, help="YAML settings file; defaults to ./config.yaml if it exists."),
+    ] = None,
+) -> None:
+    """Download the model weights and fonts to the paths given in the settings."""
+    # The input path is irrelevant here; only the model and font paths are used.
+    app_config = _load_config(Path("."), config)
+    for item in required_downloads(app_config):
+        # The path is shown before the download starts, so a long download shows what it is busy with.
+        typer.echo(f"{item.path}: ", nl=False)
+        try:
+            downloaded = download(item)
+        except DownloadError as error:
+            typer.echo("failed")
+            typer.echo(f"Error: {error}", err=True)
+            raise typer.Exit(1) from error
+        typer.echo("downloaded" if downloaded else "exists")
+
+
+def _load_config(input_path: Path, config_path: Path | None) -> AppConfig:
+    """Config built from the settings file, or from the defaults when there is none."""
+    if config_path is None and DEFAULT_CONFIG_PATH.is_file():
+        config_path = DEFAULT_CONFIG_PATH
+    try:
+        data = load_config_data(config_path) if config_path else {}
+        return build_config(input_path, data)
+    except ValueError as error:
+        raise typer.BadParameter(str(error), param_hint="--config") from error
+
+
+def _apply_options(
+    config: AppConfig,
+    max_size: int | None,
+    source_language: Language | None,
+    language: Language | None,
+    output: Path | None,
+) -> AppConfig:
+    """Config with the command-line options that were given replacing the file settings."""
+    if max_size is not None:
+        config = replace(config, image=replace(config.image, max_size=max_size))
+    if source_language is not None:
+        try:
+            config = replace(
+                config,
+                recognition=replace(config.recognition, source_language=source_language),
+                translation=replace(config.translation, source_language=source_language),
+            )
+        except ValueError as error:
+            raise typer.BadParameter(str(error), param_hint="--source-language") from error
+    if language is not None:
+        config = replace(
+            config,
+            translation=replace(config.translation, target_language=language),
+            rendering=replace(config.rendering, target_language=language),
+        )
+    if output is not None:
+        config = replace(config, output=replace(config.output, output_dir=output))
+    return config

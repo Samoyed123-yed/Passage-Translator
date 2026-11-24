@@ -1,0 +1,125 @@
+Passage local installation — provenance, checked 2026-10-31 (America/New_York)
+
+Candidate comparison, live GitHub API snapshot:
+zyddnys/manga-image-translator: 10,559 stars, pushed 2026-10-11, GPL-3.0
+dmMaze/BallonsTranslator: 5,250 stars, pushed 2026-10-31, GPL-3.0
+ogkalu2/comic-translate: 2,994 stars, pushed 2026-10-26, Apache-2.0
+These are a comparison of inspected candidates, not an exhaustive worldwide ranking.
+No verified year-over-year star history was obtained; current totals are not annual growth.
+
+Actual implementation used:
+1. comic-text-detector ONNX weights from manga-image-translator beta-0.3 release.
+   https://github.com/zyddnys/manga-image-translator
+   Inspected source commit d6de6ab62a7be6afc0d07a3184149cdefbcd32f2.
+   Passage uses the released detection weights, not this repository's full application.
+2. Lightweight ONNX model adapters vendored from M3MONs/manga-translation.
+   https://github.com/M3MONs/manga-translation
+   Commit 0d34719560a726458432dd56449d69310c3e27ba, MIT license.
+   License is retained in vendor/LICENSE-manga-translation.txt.
+   Detection, Japanese/Paddle recognition and LaMa inference adapters are actually called.
+   Its NLLB translation and default rendering are not used.
+3. Japanese manga-ocr model, ONNX export by dnouv.
+   https://github.com/kha-white/manga-ocr
+   https://huggingface.co/dnouv/manga-ocr
+4. PaddleOCR English/Korean recognizers, ONNX export by monkt.
+   https://github.com/PaddlePaddle/PaddleOCR
+   https://huggingface.co/monkt/paddleocr-onnx
+5. LaMa inpainting, ONNX export by Carve.
+   https://github.com/advimman/lama
+   https://huggingface.co/Carve/LaMa-ONNX
+6. Qwen official Qwen3-4B-GGUF, Q4_K_M.
+   https://huggingface.co/Qwen/Qwen3-4B-GGUF
+   Apache-2.0 model card.
+7. llama.cpp b12024 Windows Vulkan build, MIT project.
+   https://github.com/ggml-org/llama.cpp/releases/tag/b12024
+8. Qt / PySide6 (LGPL/GPL/commercial options), Pillow, NumPy, OpenCV, ONNX Runtime,
+   Requests and their dependencies. Package metadata/licenses retained in .venv.
+   Exact installed versions: requirements-lock.txt.
+9. Microsoft YaHei, Arial, Yu Gothic and Malgun Gothic are loaded from this Windows
+   installation. Windows font files are not copied or redistributed with this project.
+
+Passage additions:
+Chinese native desktop UI, recursive read-only scanning, separate atomic PNG output,
+source/output hashes and resumable processing, local-only model server, context and
+glossary prompts, effect-text filtering, long-image tiling, narration fallback detection,
+regular Korean vertical-text assembly, conservative clean-and-render handling, manual
+translation correction and rerendering, synthetic samples and integrity tests.
+
+BallonsTranslator and comic-translate were inspected as candidates, not installed as
+the application and not represented as the source of this new UI. No claim is made
+that all bundled model artifacts share a single license; consult their upstream model
+cards before redistributing. This directory is a local working installation.
+
+1.2 implementation references (algorithm concepts, independently implemented):
+- manga-image-translator/examples/gpt_config-example.yaml: colloquial translation,
+  preserving meaning and not interpreting/expanding the story.
+  https://github.com/zyddnys/manga-image-translator/blob/main/examples/gpt_config-example.yaml
+- BallonsTranslator: balloon-region extraction and contour-aware centered layout.
+  https://github.com/dmMaze/BallonsTranslator/blob/dev/README_EN.md
+No GPL source files from those two projects were copied into the new text_rules.py
+or typesetting.py. Their original licenses still apply to the research checkouts.
+
+1.4 English full-page coverage:
+- RapidOCR 3.10.0, Apache-2.0; official Python package, CPU ONNX Runtime.
+  https://github.com/RapidAI/RapidOCR
+- PP-OCRv6 small detector and recognizer bundled in that wheel, copied to models/english-coverage.
+  Upstream model family: https://github.com/PaddlePaddle/PaddleOCR
+  Explicit local paths; no runtime downloads and no image uploads.
+- llama.cpp GBNF is used for Chinese-only retry output.
+  https://github.com/ggml-org/llama.cpp/blob/master/grammars/README.md
+
+1.4.1 lexical reference checks (2026-11-01):
+- Collins, horny: https://www.collinsdictionary.com/us/dictionary/english/horny
+- Dictionary.com, fuck and its nonliteral uses: https://www.dictionary.com/browse/fuck
+- Shogakukan Digital Daijisen via Kotobank, ecchi: https://kotobank.jp/word/%E3%81%88%E3%81%A4%E3%81%A1-3208067
+Only independently phrased contextual guidance was added to translation_style.json, not full dictionary articles. No external dictionary is contacted during translation.
+- Japanese colloquial contraction reference: https://mainichi-nonbiri.com/tools/casual-japanese/
+
+1.7.0 locally integrated components (2026-11-11):
+- Sakura-GalTransl-7B-v3.7: CC-BY-NC-SA-4.0, non-commercial use.
+  https://huggingface.co/SakuraLLM/Sakura-GalTransl-7B-v3.7
+  Release setup explicitly downloads the IQ4_XS weight from the upstream model repository.
+  Application launch never downloads it. The model's non-commercial license remains applicable.
+- RT-DETR comic text/bubble detector, ogkalu: Apache-2.0.
+  https://huggingface.co/ogkalu/comic-text-and-bubble-detector
+- Dynamic manga LaMa, ogkalu: Apache-2.0.
+  https://huggingface.co/ogkalu/lama-manga-onnx-dynamic
+- Noto Sans SC Regular/Bold/Black: SIL Open Font License 1.1.
+  https://github.com/notofonts/noto-cjk/tree/main/Sans
+  Full license: fonts/LICENSE.txt. Download URLs and hashes: fonts/sources.json.
+- Paragraph association, local contour extraction, mask ownership, gradient fitting,
+  failure recovery and UI wiring in this release are original Passage implementation.
+  No third-party line-merging code was copied.
+
+1.5.1 Korean paragraph coverage:
+- PaddleOCR korean_PP-OCRv5_mobile_rec, Apache-2.0 upstream; ONNX export distributed by RapidAI/RapidOCR 3.10.0.
+  https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/algorithm/PP-OCRv5/PP-OCRv5_multi_languages.en.md
+  https://github.com/RapidAI/RapidOCR/blob/main/python/rapidocr/default_models.yaml
+  SHA256 cd6e2ea50f6943ca7271eb8c56a877a5a90720b7047fe9c41a2e541a25773c9b verified against the installed package's model registry.
+- Reuses the already-installed PP-OCRv6 detector. Local ONNX models only; no image or text uploads.
+- Row splitting, paragraph association, conservative non-text classification, ornament protection and layout changes are implemented in Passage.
+
+Release packaging supplement (2026-11-24):
+- jieba 0.42.1, MIT: https://github.com/fxsjy/jieba
+  Already used by linebreak.py in the source installation; now included in the
+  dependency lock so a clean installation preserves word-aware line breaking.
+- Original Passage source is MIT licensed; see LICENSE. The historical installation
+  notes above describe provenance, not a blanket license for all components.
+- Resource Han Rounded CN Medium/Bold/Heavy: SIL Open Font License 1.1.
+  https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990
+  The three unmodified font binaries and fonts/ResourceHanRounded-LICENSE.txt are
+  distributed together. They are excluded from the original-code MIT license.
+- assets.lock.json records every downloadable asset and each extracted runtime
+  member with byte size and SHA-256. Existing local asset hashes were recomputed;
+  extra manga-ocr config/tokenizer hashes came from the pinned upstream revision.
+- manga-ocr's application adapter currently reads only two ONNX models and vocab.txt.
+  The release additionally downloads upstream config and tokenizer metadata, without
+  changing that adapter. The downloaded models retain their upstream licenses.
+- Both English PP-OCRv6 files and Korean PP-OCRv5 coverage weights are downloaded
+  from RapidAI's versioned v3.10.0 ModelScope distribution; Paddle en/ko fallback
+  recognizers come from the monkt ONNX export. All are local at application runtime.
+- No model or executable runtime is redistributed in this source repository.
+  Qt/PySide6 and other Python dependencies are installed as separate packages.
+  Their license files remain in the installed environment, not replaced by MIT.
+- User images, OCR histories, translation records and private regression crops are
+  not part of this release. passage.ico and passage-icon.png are application artwork.

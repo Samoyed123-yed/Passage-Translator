@@ -1,0 +1,531 @@
+{
+  "schema": 1,
+  "assets": [
+    {
+      "file": "models/detector.onnx",
+      "url": "https://huggingface.co/ogkalu/comic-text-and-bubble-detector/resolve/16e8a622f91fabc6b5b65c96d32d1183f8843546/detector.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "065744e91c0594ad8663aa8b870ce3fb27222942eded5a3cc388ce23421bd195",
+      "bytes": 168481531
+    },
+    {
+      "file": "models/lama-manga-dynamic.onnx",
+      "url": "https://huggingface.co/ogkalu/lama-manga-onnx-dynamic/resolve/ee4ed4a8447b6730fc41d34f90876b6c48af925a/lama-manga-dynamic.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "de31ffa5ba26916b8ea35319f6c12151ff9654d4261bccf0583a69bb095315f9",
+      "bytes": 206291843
+    },
+    {
+      "file": "models/ctd.onnx",
+      "url": "https://github.com/zyddnys/manga-image-translator/releases/download/beta-0.3/comictextdetector.pt.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "1a86ace74961413cbd650002e7bb4dcec4980ffa21b2f19b86933372071d718f",
+      "bytes": 94669756
+    },
+    {
+      "file": "models/manga-ocr/encoder_model.onnx",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/onnx/encoder_model.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "6eec92809ee03608e4ac261889fdcb388de80d2864f6c3a80bbfe774b81a4f45",
+      "bytes": 343473846
+    },
+    {
+      "file": "models/manga-ocr/decoder_model_merged.onnx",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/onnx/decoder_model_merged.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "2d0d27c3f1cc19c7e9ebde8717d4a7307363aba94cc3ba9f1bf4d593a6e6c1d2",
+      "bytes": 98606033
+    },
+    {
+      "file": "models/manga-ocr/vocab.txt",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/vocab.txt",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "344fbb6b8bf18c57839e924e2c9365434697e0227fac00b88bb4899b78aa594d",
+      "bytes": 24072
+    },
+    {
+      "file": "models/paddle/en/model.onnx",
+      "url": "https://huggingface.co/monkt/paddleocr-onnx/resolve/7b02d0a30a07ba2b92ad1ff5a8941ae2c633de65/languages/english/rec.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "4e16deb22c4da6468bdca539b2cd3c8687825538b67109177c47d359ab994cd7",
+      "bytes": 7830888
+    },
+    {
+      "file": "models/paddle/en/dict.txt",
+      "url": "https://huggingface.co/monkt/paddleocr-onnx/resolve/7b02d0a30a07ba2b92ad1ff5a8941ae2c633de65/languages/english/dict.txt",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "e025a66d31f327ba0c232e03f407ae8d105e1e709e7ccb3f408aa778c24e70d6",
+      "bytes": 1416
+    },
+    {
+      "file": "models/lama.onnx",
+      "url": "https://huggingface.co/Carve/LaMa-ONNX/resolve/c3c0c9e468934d62e79c329e35d82dd09ff8c444/lama_fp32.onnx",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "1faef5301d78db7dda502fe59966957ec4b79dd64e16f03ed96913c7a4eb68d6",
+      "bytes": 208044816
+    },
+    {
+      "file": "models/Qwen3-4B-Q4_K_M.gguf",
+      "url": "https://huggingface.co/Qwen/Qwen3-4B-GGUF/resolve/bc640142c66e1fdd12af0bd68f40445458f3869b/Qwen3-4B-Q4_K_M.gguf",
+      "license": "See THIRD_PARTY.txt and upstream model card",
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "bytes": 2497280256
+    },
+    {
+      "file": "runtime/llama.zip",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12024/llama-b12024-bin-win-vulkan-x64.zip",
+      "license": "MIT; bundled dependencies retain their licenses",
+      "sha256": "a843d12c9cc3ae30e29646918f9dc4d0c7a60348499b0af497661f3b6aafc9a8",
+      "bytes": 37516123
+    },
+    {
+      "file": "fonts/NotoSansSC-Regular.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/SubsetOTF/SC/NotoSansSC-Regular.otf",
+      "license": "OFL-1.1",
+      "sha256": "faa6c9df652116dde789d351359f3d7e5d2285a2b2a1f04a2d7244df706d5ea9",
+      "bytes": 8331336
+    },
+    {
+      "file": "fonts/NotoSansSC-Bold.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/SubsetOTF/SC/NotoSansSC-Bold.otf",
+      "license": "OFL-1.1",
+      "sha256": "c6cb5a93abaa9edc8ee7463b7ebb7f42d618d40e6ed2f7a5371c97b0b64767c0",
+      "bytes": 8543168
+    },
+    {
+      "file": "fonts/NotoSansSC-Black.otf",
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/SubsetOTF/SC/NotoSansSC-Black.otf",
+      "license": "OFL-1.1",
+      "sha256": "ccb496022356b7dd14d117538a472ae40feff8f6e8f3fe8bffc5616785d2f3f9",
+      "bytes": 8855916
+    },
+    {
+      "file": "models/Sakura-Galtransl-7B-v3.7-IQ4_XS.gguf",
+      "url": "https://huggingface.co/SakuraLLM/Sakura-GalTransl-7B-v3.7/resolve/759d76b1745f4428308de6564c5ab710d4358b2e/Sakura-Galtransl-7B-v3.7-IQ4_XS.gguf",
+      "license": "CC-BY-NC-SA-4.0",
+      "sha256": "8f515bf4769f279a7fcf43e57446455a9d4de7f65b1bc9eddee76717e1ff7919",
+      "bytes": 4250296192
+    },
+    {
+      "file": "models/paddle/ko/model.onnx",
+      "url": "https://huggingface.co/monkt/paddleocr-onnx/resolve/7b02d0a30a07ba2b92ad1ff5a8941ae2c633de65/languages/korean/rec.onnx",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "322f140154c820fcb83c3d24cfe42c9ec70dd1a1834163306a7338136e4f1eaa",
+      "bytes": 13401252
+    },
+    {
+      "file": "models/paddle/ko/dict.txt",
+      "url": "https://huggingface.co/monkt/paddleocr-onnx/resolve/7b02d0a30a07ba2b92ad1ff5a8941ae2c633de65/languages/korean/dict.txt",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "a88071c68c01707489baa79ebe0405b7beb5cca229f4fc94cc3ef992328802d7",
+      "bytes": 47451
+    },
+    {
+      "file": "models/english-coverage/PP-OCRv6_det_small.onnx",
+      "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/det/PP-OCRv6_det_small.onnx",
+      "license": "Apache-2.0",
+      "sha256": "090f04abcd9d9a7498bc4ebf677e4cb9bdce1fe4197ddb7e529f1ef44e1ff94f",
+      "bytes": 9929594
+    },
+    {
+      "file": "models/english-coverage/PP-OCRv6_rec_small.onnx",
+      "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv6/rec/PP-OCRv6_rec_small.onnx",
+      "license": "Apache-2.0",
+      "sha256": "6f327246b50388f3c176ae304bd95767ea6dc0c9ae92153ef8cbe210b3c14884",
+      "bytes": 21234383
+    },
+    {
+      "file": "models/korean-coverage/korean_PP-OCRv5_rec_mobile.onnx",
+      "url": "https://www.modelscope.cn/models/RapidAI/RapidOCR/resolve/v3.10.0/onnx/PP-OCRv5/rec/korean_PP-OCRv5_rec_mobile.onnx",
+      "license": "Apache-2.0",
+      "sha256": "cd6e2ea50f6943ca7271eb8c56a877a5a90720b7047fe9c41a2e541a25773c9b",
+      "bytes": 13488748
+    },
+    {
+      "file": "fonts/ResourceHanRoundedCN-Bold.ttf",
+      "url": "https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990",
+      "license": "OFL-1.1",
+      "sha256": "f713907a21a10701cd68a7ce3e345ccdce46c789e1809d65ace54e095d7107c3",
+      "bytes": 13978508,
+      "bundled": true
+    },
+    {
+      "file": "fonts/ResourceHanRoundedCN-Heavy.ttf",
+      "url": "https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990",
+      "license": "OFL-1.1",
+      "sha256": "dfc757d9c5ae597cac15b12a51a1cee07af500cc8cf7439b243e1bb94b2b1f83",
+      "bytes": 13688972,
+      "bundled": true
+    },
+    {
+      "file": "fonts/ResourceHanRoundedCN-Medium.ttf",
+      "url": "https://github.com/CyanoHao/Resource-Han-Rounded/releases/tag/v0.990",
+      "license": "OFL-1.1",
+      "sha256": "b2ec1727fbc04b70255db6cb71be0eca3b7a7167ef11655059c5576cc920143f",
+      "bytes": 14423652,
+      "bundled": true
+    },
+    {
+      "file": "models/manga-ocr/config.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/config.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "59b8e9f726b6f769b04b3b352673cead7a92aad9895ec683203f16481dcc7878",
+      "bytes": 77987
+    },
+    {
+      "file": "models/manga-ocr/generation_config.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/generation_config.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "5e874ee3e873cdce349d2fa6eb3153c9719e2a01edcfd2dff75dbf5f47677f12",
+      "bytes": 261
+    },
+    {
+      "file": "models/manga-ocr/preprocessor_config.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/preprocessor_config.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "b09d2030f83f2a59d12c717d41a9135a3f0c1ba0a2a5df694dbc40f77735daed",
+      "bytes": 327
+    },
+    {
+      "file": "models/manga-ocr/special_tokens_map.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/special_tokens_map.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+      "bytes": 125
+    },
+    {
+      "file": "models/manga-ocr/tokenizer.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/tokenizer.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "3e1d11c99b9f4376e2c9c12e9c33a9463a3e9600a27ef6037a038e092c06c4cd",
+      "bytes": 21184
+    },
+    {
+      "file": "models/manga-ocr/tokenizer_config.json",
+      "url": "https://huggingface.co/dnouv/manga-ocr/resolve/e2817c966570b2f9af3a26c88c0781648a7ebc90/tokenizer_config.json",
+      "license": "Apache-2.0 upstream; see export model card",
+      "sha256": "ca618a7be4e00dfed2d4aa46008eb8c892d2ec32f497c9d6c354b93af833ac0f",
+      "bytes": 1426
+    }
+  ],
+  "runtime_members": [
+    {
+      "member": "ggml-vulkan.dll",
+      "file": "runtime/ggml-vulkan.dll",
+      "sha256": "d51c6f5fa93cf203d0719fdd8c5e0985e091429435a22e78356a8177ff6dfedb",
+      "bytes": 41985024
+    },
+    {
+      "member": "llama-llava-cli.exe",
+      "file": "runtime/llama-llava-cli.exe",
+      "sha256": "d26ff28812b0fe87afa8d786ab59c6ce0a5225ab24e861f5384441ee5788c85b",
+      "bytes": 27648
+    },
+    {
+      "member": "libomp.dll",
+      "file": "runtime/libomp.dll",
+      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c",
+      "bytes": 768000
+    },
+    {
+      "member": "llama-cli.exe",
+      "file": "runtime/llama-cli.exe",
+      "sha256": "6f305e028ed3bcb90732bcd2944e945e303c4f6713bc09088dc8acf864d68ed7",
+      "bytes": 9728
+    },
+    {
+      "member": "ggml-rpc-server.exe",
+      "file": "runtime/ggml-rpc-server.exe",
+      "sha256": "c13e4fb86495f8a33b5d9b24a14816a422d11d8b23f355d5dd4ce81a560bf307",
+      "bytes": 117248
+    },
+    {
+      "member": "llama-server-impl.dll",
+      "file": "runtime/llama-server-impl.dll",
+      "sha256": "d4755cea463d402b700ef2b62a97b0b8a33701ab2bcd33cdcc624ea0326ee966",
+      "bytes": 10091520
+    },
+    {
+      "member": "llama.exe",
+      "file": "runtime/llama.exe",
+      "sha256": "29bd419176117b33460234c9387d4050ec909de9fceee57587d73e340bc47a66",
+      "bytes": 105472
+    },
+    {
+      "member": "llama-batched-bench.exe",
+      "file": "runtime/llama-batched-bench.exe",
+      "sha256": "fec8219471681acfb0609adc6371815bc363448d3e8b43b18d520f7401958a0f",
+      "bytes": 9728
+    },
+    {
+      "member": "llama-results.exe",
+      "file": "runtime/llama-results.exe",
+      "sha256": "8975923c7ae4b3c735b2e76ec862a9dd5031d9cb44ece0cabe846ea3976e59f2",
+      "bytes": 47616
+    },
+    {
+      "member": "llama-common.dll",
+      "file": "runtime/llama-common.dll",
+      "sha256": "0e92dad28f2678ed6a87df96defe454badfb57f24e13d483da21bb0dcf08c4c6",
+      "bytes": 8346112
+    },
+    {
+      "member": "ggml-cpu-cooperlake.dll",
+      "file": "runtime/ggml-cpu-cooperlake.dll",
+      "sha256": "fb4981b34a8dc96f32e5b3ea3661c8aac5fe1c1c901376651f3ecd075a040f91",
+      "bytes": 1620992
+    },
+    {
+      "member": "llama-bench-impl.dll",
+      "file": "runtime/llama-bench-impl.dll",
+      "sha256": "8bd8d3a07352325dbfc0e86948b3f57993e47947df313864e8c304cdd6941715",
+      "bytes": 404480
+    },
+    {
+      "member": "ggml-cpu-sse42.dll",
+      "file": "runtime/ggml-cpu-sse42.dll",
+      "sha256": "b907e5b18254b044d562326ccfacfb0840dc99dd0620079e78572ef0252cc7db",
+      "bytes": 944128
+    },
+    {
+      "member": "ggml-cpu-zen4.dll",
+      "file": "runtime/ggml-cpu-zen4.dll",
+      "sha256": "1cd7a5aa0b398e6fa77174cca6eae1adfd8f7e3b40afd0ea4b2a8669a794233a",
+      "bytes": 1627648
+    },
+    {
+      "member": "llama-quantize-impl.dll",
+      "file": "runtime/llama-quantize-impl.dll",
+      "sha256": "2b368126d6d7552f6966568844286ba06f5472a141a0b84b6ac1f200989d6f19",
+      "bytes": 137216
+    },
+    {
+      "member": "llama-perplexity-impl.dll",
+      "file": "runtime/llama-perplexity-impl.dll",
+      "sha256": "8a29d632d7e35937a3d84d555674cb65eb8ad3a37b56fec51b7a03ec21944fda",
+      "bytes": 198144
+    },
+    {
+      "member": "ggml-cpu-haswell.dll",
+      "file": "runtime/ggml-cpu-haswell.dll",
+      "sha256": "6f2c87cfc749f8e77bf1b6dd93311de2de0ec3739019aa1c0edb7ec00ee2a822",
+      "bytes": 1447424
+    },
+    {
+      "member": "ggml-cpu-sandybridge.dll",
+      "file": "runtime/ggml-cpu-sandybridge.dll",
+      "sha256": "e2394c575777939e48b3750d830054349dc6d6cf8a1d09904b56d22e443a9012",
+      "bytes": 1319424
+    },
+    {
+      "member": "llama-connect.exe",
+      "file": "runtime/llama-connect.exe",
+      "sha256": "9f2bdd778f96971995a80add8d6b2478c156f799933337a19dbf80cdaad21b1d",
+      "bytes": 11473920
+    },
+    {
+      "member": "llama-fit-params-impl.dll",
+      "file": "runtime/llama-fit-params-impl.dll",
+      "sha256": "986bda424bbcc1467ebb72e709fcd0492727344627db9f50c4fe6b43cacb9eca",
+      "bytes": 43520
+    },
+    {
+      "member": "llama-minicpmv-cli.exe",
+      "file": "runtime/llama-minicpmv-cli.exe",
+      "sha256": "d26ff28812b0fe87afa8d786ab59c6ce0a5225ab24e861f5384441ee5788c85b",
+      "bytes": 27648
+    },
+    {
+      "member": "llama-mtmd-cli.exe",
+      "file": "runtime/llama-mtmd-cli.exe",
+      "sha256": "1d36595d6ce2a8a97286e86f248d4833df8ee80f34833149f0c91c65ea3fe7f2",
+      "bytes": 97280
+    },
+    {
+      "member": "llama-gemma3-cli.exe",
+      "file": "runtime/llama-gemma3-cli.exe",
+      "sha256": "d26ff28812b0fe87afa8d786ab59c6ce0a5225ab24e861f5384441ee5788c85b",
+      "bytes": 27648
+    },
+    {
+      "member": "llama-completion.exe",
+      "file": "runtime/llama-completion.exe",
+      "sha256": "1695b86414387a498a30494178da2558b0eb56f50afb90bcd36ff70957aa216c",
+      "bytes": 9728
+    },
+    {
+      "member": "LICENSE-LLVM-OpenMP",
+      "file": "runtime/LICENSE-LLVM-OpenMP",
+      "sha256": "fdad1758a9e1f9d5a81e18879b3406772115edc92c24bfa36b70c654f325e8e4",
+      "bytes": 19741
+    },
+    {
+      "member": "ggml-base.dll",
+      "file": "runtime/ggml-base.dll",
+      "sha256": "0cf7a2a367e7bdf02a29f7ac78df24af561e59debb533cdd5b832c3660aea9a7",
+      "bytes": 827904
+    },
+    {
+      "member": "llama-qwen2vl-cli.exe",
+      "file": "runtime/llama-qwen2vl-cli.exe",
+      "sha256": "d26ff28812b0fe87afa8d786ab59c6ce0a5225ab24e861f5384441ee5788c85b",
+      "bytes": 27648
+    },
+    {
+      "member": "llama-server.exe",
+      "file": "runtime/llama-server.exe",
+      "sha256": "5257a00505d8c8f060ccca160d85970d27d86c0d15d24822081b9185b8eced29",
+      "bytes": 9728
+    },
+    {
+      "member": "ggml-cpu-ivybridge.dll",
+      "file": "runtime/ggml-cpu-ivybridge.dll",
+      "sha256": "cc38ba2d3ed750361e3d8850388c39bd07890315c1e685735e078c877db0f548",
+      "bytes": 1328640
+    },
+    {
+      "member": "ggml-cpu-cascadelake.dll",
+      "file": "runtime/ggml-cpu-cascadelake.dll",
+      "sha256": "a658ed990fbf32717b5e6a3e16cec6eb995751aa71765e406824b3477a5ca5a1",
+      "bytes": 1611776
+    },
+    {
+      "member": "llama.dll",
+      "file": "runtime/llama.dll",
+      "sha256": "53de10b7c845244dcdda1a71bd877de20007d44ed1110ef128f95a534b9e60c6",
+      "bytes": 3753472
+    },
+    {
+      "member": "llama-perplexity.exe",
+      "file": "runtime/llama-perplexity.exe",
+      "sha256": "cf2497c03e7223d2c0cf7c3f9c488aa6dbf7c668e9b15eff882e88352df2572a",
+      "bytes": 9728
+    },
+    {
+      "member": "ggml.dll",
+      "file": "runtime/ggml.dll",
+      "sha256": "3d5ba0606db6aeb9c1ad034b85b64b76a252a5d70f2e94aa61203f0b95a957d5",
+      "bytes": 78848
+    },
+    {
+      "member": "ggml-cpu-piledriver.dll",
+      "file": "runtime/ggml-cpu-piledriver.dll",
+      "sha256": "4b8ee076ba73fa76abad838aa95d2763d7a9af5fe0d08d7f1efc6821ef43f2a2",
+      "bytes": 1321472
+    },
+    {
+      "member": "llama-fit-params.exe",
+      "file": "runtime/llama-fit-params.exe",
+      "sha256": "7902657dabbb214a6bb90478cdfe8fec0fa4549efdc34de20b5743fe5abba460",
+      "bytes": 9728
+    },
+    {
+      "member": "llama-gguf-split.exe",
+      "file": "runtime/llama-gguf-split.exe",
+      "sha256": "bcaa5897088a939e9888f6d82b1d8f9181f98e6ee567d64e019c3a05a6b1d8e2",
+      "bytes": 60928
+    },
+    {
+      "member": "mtmd.dll",
+      "file": "runtime/mtmd.dll",
+      "sha256": "47ae6801f0babef4d270d1d33eea48996f181ab806ce4e07ea089b587eb06476",
+      "bytes": 2143744
+    },
+    {
+      "member": "llama-cli-impl.dll",
+      "file": "runtime/llama-cli-impl.dll",
+      "sha256": "17150892ef6a64a3d3fd1dece35fbedcb76db2bd185ad34481a13f026f48ce81",
+      "bytes": 3375104
+    },
+    {
+      "member": "llama-tokenize.exe",
+      "file": "runtime/llama-tokenize.exe",
+      "sha256": "19bb1084123f6294faf6463c2c08655abfb38ffffa971b21ed2aa8fb07aa9665",
+      "bytes": 59392
+    },
+    {
+      "member": "llama-tts.exe",
+      "file": "runtime/llama-tts.exe",
+      "sha256": "d647389bb190c8eb36815fcffa09517902d83da50c0de95b6c75cce1f916c23b",
+      "bytes": 45568
+    },
+    {
+      "member": "llama-completion-impl.dll",
+      "file": "runtime/llama-completion-impl.dll",
+      "sha256": "4499081e273f9664bc0ee3762e2773358d5d054c14691a136fc8fc206dc6cc9b",
+      "bytes": 138752
+    },
+    {
+      "member": "ggml-cpu-icelake.dll",
+      "file": "runtime/ggml-cpu-icelake.dll",
+      "sha256": "17bb5777d8cc082607fddef5422db8d46fc2606c4f25bb124a14c9a0af8eab9f",
+      "bytes": 1617920
+    },
+    {
+      "member": "ggml-rpc.dll",
+      "file": "runtime/ggml-rpc.dll",
+      "sha256": "a43eba40e9d29020ef49ef5ebef5af08e9c0a1a925974b52298aaab36dc97c07",
+      "bytes": 231424
+    },
+    {
+      "member": "llama-quantize.exe",
+      "file": "runtime/llama-quantize.exe",
+      "sha256": "9626db22f0a137087622fdb5947d3191b7aa87b0c9d44a770f6fe5705f1ca7d6",
+      "bytes": 9728
+    },
+    {
+      "member": "ggml-cpu-cannonlake.dll",
+      "file": "runtime/ggml-cpu-cannonlake.dll",
+      "sha256": "23972dd0f7c93acf993b04d90564dbed885429d84f8edb64cc653677a0db0de5",
+      "bytes": 1637888
+    },
+    {
+      "member": "ggml-cpu-sapphirerapids.dll",
+      "file": "runtime/ggml-cpu-sapphirerapids.dll",
+      "sha256": "d6669166ca1f8b90984302d5f396a73961b1fcab9201e12cdd90a04238ccef4c",
+      "bytes": 1897472
+    },
+    {
+      "member": "llama-imatrix.exe",
+      "file": "runtime/llama-imatrix.exe",
+      "sha256": "d648a3b63ae1613fb1e2d6e40b0c35266d5f6ed4cfa28fb2c9581ea4aa519f67",
+      "bytes": 253952
+    },
+    {
+      "member": "llama-mtmd-debug.exe",
+      "file": "runtime/llama-mtmd-debug.exe",
+      "sha256": "f56d37fa20c0380cc82d711079611c4f47fdd42d6c56535a8af6d913d920ccd6",
+      "bytes": 56832
+    },
+    {
+      "member": "ggml-cpu-skylakex.dll",
+      "file": "runtime/ggml-cpu-skylakex.dll",
+      "sha256": "84f583f9ca3c4856fc5f7112fedd919797060f1ff9520d304b0f0f437f6afd08",
+      "bytes": 1631744
+    },
+    {
+      "member": "llama-bench.exe",
+      "file": "runtime/llama-bench.exe",
+      "sha256": "c032965c392686682fdb96a0c865239b9da1f4152db4c1959f03688eefd1f8db",
+      "bytes": 9728
+    },
+    {
+      "member": "llama-batched-bench-impl.dll",
+      "file": "runtime/llama-batched-bench-impl.dll",
+      "sha256": "32d30532cc48d7e8fa5653c1c6f0db038fd56ea6b500c89c7a29bd2b89da3d30",
+      "bytes": 61952
+    },
+    {
+      "member": "ggml-cpu-alderlake.dll",
+      "file": "runtime/ggml-cpu-alderlake.dll",
+      "sha256": "0e728d52696c37be57da44fd27d521e5aa1075328b3f69e3d1a16dbbd0dd006d",
+      "bytes": 1442816
+    },
+    {
+      "member": "ggml-cpu-x64.dll",
+      "file": "runtime/ggml-cpu-x64.dll",
+      "sha256": "1428be477fdcd07e33e09fedc234a47f73beafc0678f4815df8fd7f2681239f4",
+      "bytes": 935936
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+# Downloaded assets and machine-specific environments
+.venv/
+models/
+runtime/
+__pycache__/
+*.py[cod]
+*.part
+*.tmp
+*.log
+.pytest_cache/
+.coverage
+fonts/*.otf
+# Only the three OFL round fonts are intentionally bundled.
+fonts/*.ttf
+!fonts/ResourceHanRoundedCN-Medium.ttf
+!fonts/ResourceHanRoundedCN-Bold.ttf
+!fonts/ResourceHanRoundedCN-Heavy.ttf
+fonts/*.ttc
+
+# Private books, application preferences, OCR records, and handoffs
+preferences.json
+exports/
+evidence/
+examples/
+tests/fixtures/
+.passage/
+**/.passage/
+*.passage
+交接-*.md
+*（中译）*/
+*_中文/
+.env
+.env.*
+*.lnk
+
+# Local-only maintenance tools; not application dependencies
+analyze_reference_layout.py
+apply_archive_book.py
+audit_cjk_release.py
+continue_unfinished_book.py
+*anthology*.py
+read_anthology_references.py
+rebuild_current_book.py
+refine_archive_text.py
+reletter_archive.py
+repair_*.py
+reprocess_pages.py
+scan_last_pages.py
+stage_archive_book.py
+verify_*.py
+test_archive_revision.py
+!test_anthology_font.py
